@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
 gem "rails", "3.2.17"
+gem "rake", "~> 10.1.1"
 gem "jquery-rails", "~> 2.0.2"
 gem "coderay", "~> 1.1.0"
 gem "fastercsv", "~> 1.5.0", :platforms => [:mri_18, :mingw_18, :jruby]
 gem "builder", "3.0.0"
 gem "mime-types"
-gem "awesome_nested_set", "2.1.6"
 
 # Optional gem for LDAP authentication
 group :ldap do
@@ -104,3 +104,5 @@ Dir.glob File.expand_path("../plugins/*/Gemfile", __FILE__) do |file|
   #TODO: switch to "eval_gemfile file" when bundler >= 1.2.0 will be required (rails 4)
   instance_eval File.read(file), file
 end
+
+gem 'coveralls', require: false

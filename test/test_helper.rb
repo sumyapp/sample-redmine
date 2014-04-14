@@ -16,6 +16,9 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 #require 'shoulda'
+require 'coveralls'
+Coveralls.wear!
+
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'rails/test_help'
@@ -221,7 +224,8 @@ class ActiveSupport::TestCase
   # It seems correct behavior because of this line comment.
   #   https://github.com/collectiveidea/awesome_nested_set/blame/199fca9bb9/lib/awesome_nested_set/model.rb#L278
   def new_issue_lft
-    ::AwesomeNestedSet::VERSION > "2.1.6" ? Issue.maximum(:rgt) + 1 : 1
+    # ::AwesomeNestedSet::VERSION > "2.1.6" ? Issue.maximum(:rgt) + 1 : 1
+    Issue.maximum(:rgt) + 1
   end
 end
 
